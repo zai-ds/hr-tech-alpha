@@ -1,6 +1,8 @@
 django
 djangorestframework
 django-cors-headers
-pyjwt
+pyjwt[crypto]
 cryptography
 requests
+gunicorn
+psycopg2-binary
