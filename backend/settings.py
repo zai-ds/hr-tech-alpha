@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -166,5 +167,10 @@ REST_FRAMEWORK = {
 AUTH0_DOMAIN = 'dev-4x8pzjemsul14bhy.us.auth0.com'
 AUTH0_API_AUDIENCE = 'https://api.plataforma-metas.com' # Geralmente é o "Identifier" da sua API no Auth0
 AUTH0_ALGORITHMS = ['RS256']
+
+# URL para referenciar os arquivos estáticos
+STATIC_URL = '/static/'
+# Diretório onde o comando 'collectstatic' vai juntar todos os arquivos estáticos
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Quando implantarmos nosso frontend no Vercel, teremos que adicionar a URL dele aqui também.
