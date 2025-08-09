@@ -25,15 +25,7 @@ SECRET_KEY = 'django-insecure-42s-a32(cty+6zdn&!+fz-vmm5sk5pj+82&kq*$sp@j%6^r7$(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
-
-# Se a variável de ambiente EB_HOSTNAME existir (o que acontece na AWS),
-# adicione-a à lista de hosts permitidos.
-if 'EB_HOSTNAME' in os.environ:
-    ALLOWED_HOSTS.append(os.environ['EB_HOSTNAME'])
-
-# Também é uma boa prática adicionar o localhost para verificações internas
-ALLOWED_HOSTS.append('localhost')
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
