@@ -3,8 +3,7 @@ import axios from 'axios';
 
 // Criamos uma instância do axios que será usada em todo o app
 const apiClient = axios.create({
-  // A URL base da nossa API Django que está rodando localmente
-  baseURL: 'http://dev-env.eba-cpmqhwqn.us-east-1.elasticbeanstalk.com/api/goals/',
+  baseURL: '/api/goals/',
 });
 
 // Esta função é um "interceptor". Ela vai "interceptar" cada requisição
