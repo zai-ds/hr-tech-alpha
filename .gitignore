@@ -25,3 +25,7 @@ frontend/yarn-error.log*
 .vscode/
 .idea/
 *.swp
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
