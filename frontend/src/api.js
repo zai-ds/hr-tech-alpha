@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // Criamos uma instância do axios que será usada em todo o app
 const apiClient = axios.create({
-  baseURL: '/api/goals/',
+  baseURL: '/api/',
 });
 
 // Esta função é um "interceptor". Ela vai "interceptar" cada requisição
