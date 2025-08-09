@@ -141,12 +141,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # --- Configurações do CORS ---
 
-# Esta lista define quais "origens" (domínios do frontend)
-# têm permissão para fazer requisições para este backend.
-# Por enquanto, vamos permitir apenas o servidor de desenvolvimento do React.
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-]
+# Esta é a nova configuração dinâmica de CORS.
+# 1. Ele tenta ler a variável de ambiente 'CORS_ALLOWED_ORIGINS' que configuramos no Elastic Beanstalk.
+# 2. Se ele não encontrar (como quando rodamos localmente), ele usa 'http://localhost:3000' como valor padrão.
+# 3. Ele pega a string (ex: "http://localhost:3000,https://main.xyz.com")
+allowed_origins_str = os.environ.get('CORS_ALLOWED_ORIGINS', 'http://localhost:3000')
+CORS_ALLOWED_ORIGINS = allowed_origins_str.split(',')
 
 # --- Configurações da API e Autenticação ---
 
