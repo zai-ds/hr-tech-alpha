@@ -16,3 +16,7 @@ applications:
         paths:
           - node_modules/**/*
     appRoot: frontend
+customRules:
+  - source: '/api/<*>'
+    target: 'https://SEU_URL_DO_APP_RUNNER_AQUI/api/<*>'
+    status: '200'
